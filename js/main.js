@@ -31,7 +31,7 @@ let description = "";
 //Inizio ciclo for 
 for( let i = 0; i < placesPicture.length; i++){
     slides +=   `<div class="currentImg"> 
-                    <img class=image" src="${placesPicture[i]}">
+                    <img class="image" src="${placesPicture[i]}">
                 </div>`;
     
    /* country +=  `<div class="country">
@@ -41,17 +41,19 @@ for( let i = 0; i < placesPicture.length; i++){
     description += `<div class="description">
                         ${placeDescription[i]}
                     </div>`;*/
-    console.log(slides)
+   
 }
 
-let place = document.querySelector('.place');
-place.innerHTML = slides;
 
+
+let place = document.getElementsByClassName('place');
+place[0].innerHTML = slides;
+console.log(place[0]);
 /*let countryInfo = document.querySelector('.countryInfo')
 countryInfo.innerHTML = country + placeDescription;
 */
 let currentSlide = 0;
 
-let currentImg = document.getElementsByClassName('.currentImg');
+let currentImg = document.getElementsByClassName(".currentImg");
 currentImg[currentSlide].classList.add('active');
 
