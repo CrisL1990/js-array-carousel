@@ -41,6 +41,7 @@ for( let i = 0; i < placesPicture.length; i++){
     description += `<div class="description">
                         ${placeDescription[i]}
                     </div>`;*/
+    console.log(slides)
 }
 
 let place = document.querySelector('.place');
@@ -53,3 +54,4 @@ let currentSlide = 0;
 
 let currentImg = document.getElementsByClassName('.currentImg');
 currentImg[currentSlide].classList.add('active');
+
