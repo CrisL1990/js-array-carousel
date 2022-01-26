@@ -27,6 +27,7 @@ let placeDescription = [
 let slides = "";
 let country = "";
 let description = "";
+let places = "";
 
 //Inizio ciclo for 
 for( let i = 0; i < placesPicture.length; i++){
@@ -34,26 +35,69 @@ for( let i = 0; i < placesPicture.length; i++){
                     <img class="image" src="${placesPicture[i]}">
                 </div>`;
     
-   /* country +=  `<div class="country">
+    country +=  `<div class="country">
                     ${placesName[i]}   
                 </div>`;
 
     description += `<div class="description">
                         ${placeDescription[i]}
-                    </div>`;*/
-   
+                    </div>`;
+
+    places +=   `<div class="currentPlace">
+                    <img class="selected" src="${placesPicture[i]}">
+                </div>`;
+    
 }
 
 
 
-let place = document.getElementsByClassName('place');
-place[0].innerHTML = slides;
-console.log(place[0]);
-/*let countryInfo = document.querySelector('.countryInfo')
-countryInfo.innerHTML = country + placeDescription;
-*/
+
+let place = document.querySelector('.place');
+place.innerHTML = slides;
+
+let countryName = document.querySelector('.countryName');
+countryName.innerHTML = country;
+
+let countryInfo = document.querySelector('.countryInfo');
+countryInfo.innerHTML = description;
+
+let placeList = document.querySelector('.placesList')
+placeList.innerHTML = places;
+
 let currentSlide = 0;
 
-let currentImg = document.getElementsByClassName(".currentImg");
-currentImg[currentSlide].classList.add('active');
+let up = document.getElementById('arrowUp');
+
+let items = document.getElementsByClassName('currentImg');
+let name = document.getElementsByClassName('country');
+let info = document.getElementsByClassName('description');
+
+up.addEventListener('click',
+    function(){
+        if(currentSlide < placesPicture.length - 1){
+            currentSlide += 1;
+            items[currentSlide].classList.add('active');
+            name[currentSlide].classList.add('active');
+            info[currentSlide].classList.add('active');
+            items[currentSlide - 1].classList.remove('active');
+            name[currentSlide - 1].classList.remove('active');
+            info[currentSlide - 1].classList.remove('active')
+        }
+
+        else{
+            currentSlide = 0;
+        }
+        
+    }  
+);
+
+console.log(currentSlide)
+
+
+
+
+
+
+
+
 

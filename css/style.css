@@ -57,14 +57,22 @@
     object-fit: cover;
 }
 
+.countryName{
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: 70%;
+}
+
 .countryInfo{
     position: absolute;
     top: 80%;
     left: 0;
-    width: 100%;
+    width: 70%;
 }
 
 .country{
+    display: none;
     text-align: end;
     color: white;
     font-size: 20px;
@@ -72,10 +80,19 @@
     padding-right: 20px;
 }
 
+.country.active{
+    display: block;
+}
+
 .description{
+    display: none;
     color: white;
     text-align: end;
     padding: 10px 20px;
+}
+
+.description.active{
+    display: block;
 }
 
 .currentPlace{
@@ -97,7 +114,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 }
 
@@ -110,5 +127,6 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin-right: 13.5%;
 }
 
