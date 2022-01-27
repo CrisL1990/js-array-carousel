@@ -67,13 +67,19 @@ placeList.innerHTML = places;
 let currentSlide = 0;
 
 let up = document.getElementById('arrowUp');
+let down = document.getElementById('arrowDown');
 
 let items = document.getElementsByClassName('currentImg');
 let name = document.getElementsByClassName('country');
 let info = document.getElementsByClassName('description');
 
+items[currentSlide].classList.add('active');
+name[currentSlide].classList.add('active');
+info[currentSlide].classList.add('active');
+
 up.addEventListener('click',
     function(){
+        
         if(currentSlide < placesPicture.length - 1){
             currentSlide += 1;
             items[currentSlide].classList.add('active');
@@ -82,16 +88,25 @@ up.addEventListener('click',
             items[currentSlide - 1].classList.remove('active');
             name[currentSlide - 1].classList.remove('active');
             info[currentSlide - 1].classList.remove('active')
-        }
-
-        else{
-            currentSlide = 0;
-        }
-        
+        } 
     }  
 );
 
-console.log(currentSlide)
+down.addEventListener('click',
+    function(){
+        
+        if(currentSlide != 0){
+            currentSlide = currentSlide - 1;
+            items[currentSlide].classList.add('active');
+            name[currentSlide].classList.add('active');
+            info[currentSlide].classList.add('active');
+            items[currentSlide + 1].classList.remove('active');
+            name[currentSlide + 1].classList.remove('active');
+            info[currentSlide + 1].classList.remove('active')
+        } 
+    }  
+);
+
 
 
 
